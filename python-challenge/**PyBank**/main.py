@@ -43,16 +43,19 @@ with open(csvpath) as csvfile:
     # find the date with the greatest increase and the date with the greatest decrease
     month_maximum = int(profit_loss_diff.index(greatest_increase))
     month_minimum = int(profit_loss_diff.index(greatest_decrease))
+
+# create file to store txt file and txt file
 file_to_save = os.path.join("analysis", "profit_loss.txt")
 with open (file_to_save, 'w') as txt_file:
     
-
+# print to terminal
     print(f"Total Months: {len(total_months)}")
     print(f"Total : $ {sum(total)}")
     print(f"Average Change : $ {round(average_profit_loss,2)}")
     print(f"Greatest Increase in Profits: {total_months[month_maximum+1]} (${greatest_increase})")
     print(f"Greatest Decrease in Profits: {total_months[month_minimum+1]} (${greatest_decrease})")
     
+# Print to txt file
     output = (f"Financial Analysis \n"
               f"------------------------------\n"
               f"Total : $ {sum(total)}\n"
@@ -62,16 +65,7 @@ with open (file_to_save, 'w') as txt_file:
 
     txt_file.write(output)
 
-    # output = str(sum(total))
-    # months_total = str(total_months)
-    # increase_profit = str(total_months(month_maximum + 1))
-        
-    # txt_file.write('Financial Analysis' + '\n------------------------------')
-    # txt_file.write('Total Months:' + months_total + '\n')
-    # txt_file.write('Total : $' + output + '\n')
-    # txt_file.write('Average Change : $' + str(round(average_profit_loss,2)) + '\n')
-    # txt_file.write('Greatest Increase in Profits:' + str(total_months(month_maximum+1)) + "$" + (greatest_increase) +'\n')
-    # txt_file.write('Greatest Decrease in Profits:' + str(total_months(month_minimum+1)) + "$" + (greatest_decrease))
+    
 
   
     
